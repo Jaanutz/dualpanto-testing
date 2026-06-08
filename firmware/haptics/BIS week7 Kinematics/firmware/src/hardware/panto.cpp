@@ -35,17 +35,17 @@ void Panto::forwardKinematics()
     // once you write correct code, IT handle will follow ME handle when you move ME handle.
 
     // please comment out
-    const auto leftInnerX = 0;
-    const auto leftInnerY = 0;
-    const auto rightInnerX = 0;
-    const auto rightInnerY = 0;
+    // const auto leftInnerX = 0;
+    // const auto leftInnerY = 0;
+    // const auto rightInnerX = 0;
+    // const auto rightInnerY = 0;
     // please comment out
 
     // YOUR CODE STARTS
-//    const auto leftInnerX = ...;
-//    const auto leftInnerY = ...;
-//    const auto rightInnerX = ...;
-//    const auto rightInnerY = ...;
+    const auto leftInnerX = c_leftBaseX + (c_leftInnerLength * std::cos(leftBaseAngle));
+    const auto leftInnerY = c_leftBaseY + (c_leftInnerLength * std::sin(leftBaseAngle));
+    const auto rightInnerX = c_rightBaseX + (c_rightInnerLength * std::cos(rightBaseAngle));
+    const auto rightInnerY = c_rightBaseY + (c_rightInnerLength * std::sin(rightBaseAngle));
     // YOUR CODE ENDS
 
 
