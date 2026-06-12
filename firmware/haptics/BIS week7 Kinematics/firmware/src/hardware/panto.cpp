@@ -42,10 +42,14 @@ void Panto::forwardKinematics()
     // please comment out
 
     // YOUR CODE STARTS
-    const auto leftInnerX = c_leftBaseX + (c_leftInnerLength * leftBaseAngleCos);
-    const auto leftInnerY = c_leftBaseY + (c_leftInnerLength * leftBaseAngleSin);
-    const auto rightInnerX = c_rightBaseX + (c_rightInnerLength * leftBaseAngleCos);
-    const auto rightInnerY = c_rightBaseY + (c_rightInnerLength * leftBaseAngleSin);
+    const auto leftInnerX =
+        fmaf(leftBaseAngleCos, c_leftInnerLength, c_leftBaseX);
+    const auto leftInnerY =
+        fmaf(leftBaseAngleSin, c_leftInnerLength, c_leftBaseY);
+    const auto rightInnerX =
+        fmaf(std::cos(rightBaseAngle), c_rightInnerLength, c_rightBaseX);
+    const auto rightInnerY =
+        fmaf(std::sin(rightBaseAngle), c_rightInnerLength, c_rightBaseY);
     // YOUR CODE ENDS
 
 
